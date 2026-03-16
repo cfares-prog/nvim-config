@@ -3,14 +3,23 @@ require("faust.remap")
 require("faust.lsp")
 
 require("catppuccin").setup({
-  flavour = "mocha", -- darkest
-  transparent_background = true,
+  flavour = "frappe", -- darkest
+  transparent_background = false,
+  float = {
+      transparent = true,
+      solid = false
+  },
+  show_end_buffer = false,
   integrations = {
     treesitter = true,
     native_lsp = { enabled = true },
   },
+  styles = {
+      conditionals = { "bold" }
+  }
 })
 
+require("ibl").setup()
 
 vim.opt.clipboard = "unnamedplus"
 vim.diagnostic.config({
@@ -26,7 +35,7 @@ vim.diagnostic.config({
 })
 
 require("faust.set")
-vim.cmd.colorscheme("cherryBlossom")
+vim.cmd.colorscheme("catppuccin")
 
 local harpoon = require("harpoon")
 
@@ -45,6 +54,10 @@ vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<leader>h", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<leader>l", function() harpoon:list():next() end)
+
+
+-- Treesitter
+require'nvim-treesitter'.install { 'rust', 'javascript', 'c', 'python', 'cpp' }
 
 -- virtual lines
 local ns = vim.api.nvim_create_namespace("eof_padding")
