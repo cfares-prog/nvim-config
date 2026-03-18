@@ -2,6 +2,7 @@ require("faust.lazy")
 require("faust.remap")
 require("faust.lsp")
 
+vim.opt.termguicolors = true
 require("catppuccin").setup({
   flavour = "frappe", -- darkest
   transparent_background = false,
@@ -14,6 +15,7 @@ require("catppuccin").setup({
     treesitter = true,
     native_lsp = { enabled = true },
   },
+  no_italics = true,
   styles = {
       conditionals = { "bold" }
   }
