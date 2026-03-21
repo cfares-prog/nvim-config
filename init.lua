@@ -38,7 +38,7 @@ vim.diagnostic.config({
 })
 
 require("faust.set")
-vim.cmd.colorscheme("gruber-darker")
+vim.cmd.colorscheme("cherryBlossom")
 
 local harpoon = require("harpoon")
 

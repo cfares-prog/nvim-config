@@ -52,7 +52,7 @@ M.setup = function()
     hl("Visual",      { fg = "black", bg = c.search_bg })
     hl("MatchParen",  { fg = c.purple, bg = "NONE" , bold = true })
     hl("NonText",     { fg = c.gray })
-    hl("Whitespace",  { fg = c.gray, italic = true })
+    hl("Whitespace",  { fg = c.gray, italic = false })
 
     -- ======================
     -- Popup Menu
@@ -64,7 +64,7 @@ M.setup = function()
     -- ======================
     -- Syntax
     -- ======================
-    hl("Comment",    { fg = c.gray, italic = true })
+    hl("Comment",    { fg = c.gray, italic = false })
     hl("Constant",   { fg = c.white })
     hl("Function",   { fg = c.yellow })
     hl("Identifier", { fg = c.white })
@@ -72,7 +72,7 @@ M.setup = function()
     hl("Statement",  { fg = c.pastel_pink, bold = true })
     hl("Type",       { fg = c.pastel_pink, bold = true })
     hl("Keyword",    { fg = c.pastel_pink, bold = true })
-    hl("String",     { fg = c.string_green, italic = true })
+    hl("String",     { fg = c.string_green, italic = false })
     hl("Include",    { fg = c.yellow })
     hl("PreProc",    { fg = c.yellow })
     hl("Delimiter",  { fg = c.light_blue })
@@ -88,6 +88,7 @@ M.setup = function()
     -- ======================
     -- Extra Groups
     -- ======================
+    hl("ColorColumn", { bg = "#3A3F52" })
     hl("NormalFloat", { bg = "NONE" })
     hl("Number",      { fg = c.light_blue })
     hl("Boolean",     { fg = c.light_blue })
