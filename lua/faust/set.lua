@@ -16,13 +16,10 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
-vim.api.nvim_set_hl(0,"colorcolumn",{
-    bg = "#253f5b",
-})
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "90"
+vim.opt.colorcolumn = "100"
 vim.api.nvim_set_hl(0, "Normal", { fg = "#ffffff" })
 vim.g.mapleader = " "
 

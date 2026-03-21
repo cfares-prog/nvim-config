@@ -1,10 +1,11 @@
 require("faust.lazy")
 require("faust.remap")
 require("faust.lsp")
+require("faust.init")
 
 vim.opt.termguicolors = true
 require("catppuccin").setup({
-  flavour = "frappe", -- darkest
+  flavour = "mocha", -- darkest
   transparent_background = false,
   float = {
       transparent = true,
@@ -37,7 +38,7 @@ vim.diagnostic.config({
 })
 
 require("faust.set")
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("gruber-darker")
 
 local harpoon = require("harpoon")
 
@@ -60,6 +61,14 @@ vim.keymap.set("n", "<leader>l", function() harpoon:list():next() end)
 
 -- Treesitter
 require'nvim-treesitter'.install { 'rust', 'javascript', 'c', 'python', 'cpp' }
+
+-- No italics
+vim.cmd([[
+  highlight Comment gui=NONE
+  highlight Keyword gui=NONE
+  highlight Function gui=NONE
+  highlight String gui=NONE
+]])
 
 -- virtual lines
 local ns = vim.api.nvim_create_namespace("eof_padding")
