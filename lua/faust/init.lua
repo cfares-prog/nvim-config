@@ -1,37 +1,50 @@
 -- Custom gruber for lualine
-local cherry_blossom = {
+local gruber = {
   normal = {
-    a = { fg = "#1F2430", bg = "#7FDF7D", gui = "bold" },
-    b = { fg = "#DADADA", bg = "#3A3F52" },
-    c = { fg = "#DADADA", bg = "#3A3F52" },
+    a = { bg = "#ffdd33", fg = "#181818", gui = "bold" },
+    b = { bg = "#3c3836", fg = "#e4e4ef" },
+    c = { bg = "#282828", fg = "#e4e4ef" },
   },
   insert = {
-    a = { fg = "#1F2430", bg = "#7FDFFF", gui = "bold" }, -- light blue
-    b = { fg = "#DADADA", bg = "#1F2430" },
-    c = { fg = "#DADADA", bg = "#1F2430" },
+    a = { bg = "#6fa87a", fg = "#181818", gui = "bold" },
+    b = { bg = "#3c3836", fg = "#e4e4ef" },
   },
   visual = {
-    a = { fg = "#1F2430", bg = "#EB9BEF", gui = "bold" }, -- pastel pink
-    b = { fg = "#DADADA", bg = "#1F2430" },
-    c = { fg = "#DADADA", bg = "#1F2430" },
+    a = { bg = "#9e95c7", fg = "#181818", gui = "bold" },
+    b = { bg = "#3c3836", fg = "#e4e4ef" },
   },
   replace = {
-    a = { fg = "#1F2430", bg = "#FB55AA", gui = "bold" }, -- purple
-    b = { fg = "#DADADA", bg = "#1F2430" },
-    c = { fg = "#DADADA", bg = "#1F2430" },
-  },
-  command = {
-    a = { fg = "#1F2430", bg = "#FFF0AF", gui = "bold" }, -- yellow
-    b = { fg = "#DADADA", bg = "#1F2430" },
-    c = { fg = "#DADADA", bg = "#1F2430" },
+    a = { bg = "#f43841", fg = "#181818", gui = "bold" },
+    b = { bg = "#3c3836", fg = "#e4e4ef" },
   },
   inactive = {
-    a = { fg = "#9AA0A6", bg = "#1F2430", gui = "bold" },  -- gray
-    b = { fg = "#9AA0A6", bg = "#1F2430" },
-    c = { fg = "#9AA0A6", bg = "#1F2430" },
+    a = { bg = "#181818", fg = "#52494e" },
+    b = { bg = "#181818", fg = "#52494e" },
+    c = { bg = "#181818", fg = "#52494e" },
   },
 }
 
+
+require('lualine').setup {
+  options = {
+    theme = gruber,
+    section_separators = '',
+    component_separators = '',
+  }
+}
+
+-- slight gruber darker changes
+vim.cmd([[
+    " ~/.config/nvim/after/colors/gruber-darker.vim
+    if exists("g:colors_name")
+      " Amber for constants
+      let s:amber = "#FFBF00"
+      highlight Constant guifg=s:amber ctermfg=214
+
+      let s:datatype = "#FFD700"  " classic gold/yellow
+      highlight Type guifg=s:datatype ctermfg=220
+    endif
+    ]])
 
 require('lualine').setup {
   options = {
