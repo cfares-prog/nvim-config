@@ -38,14 +38,22 @@ vim.diagnostic.config({
 })
 
 require("faust.set")
-vim.cmd.colorscheme("cherryBlossom")
+vim.cmd.colorscheme("gruber-darker")
 
+vim.api.nvim_set_hl(0,"Constant",   { fg =  "#00bfbb" })
+vim.api.nvim_set_hl(0,"Identifier", { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0,"Operator",   { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0,"Type",       { fg = "#ffd700", bold = true })
+vim.api.nvim_set_hl(0,"Keyword",    { fg = "#ffd700",  bold = true })
+vim.api.nvim_set_hl(0,"Include",    { fg = "#00bfbb"})
+vim.api.nvim_set_hl(0,"PreProc",    { fg = "#00bfbb" })
+vim.api.nvim_set_hl(0, "@variable", { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0, "@field", { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0, "Identifier", { fg = "#FFFFFF" })
+
+-- Harpoon 
 local harpoon = require("harpoon")
-
--- REQUIRED
 harpoon:setup()
--- REQUIRED
-
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>f", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
@@ -53,14 +61,14 @@ vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
+-- Harpoon
 
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<leader>h", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<leader>l", function() harpoon:list():next() end)
 
-
 -- Treesitter
-require'nvim-treesitter'.install { 'rust', 'javascript', 'c', 'python', 'cpp' }
+require'nvim-treesitter'.install { 'rust', 'javascript', 'c', 'python', 'cpp', 'typescript'}
 
 -- No italics
 vim.cmd([[
