@@ -4,9 +4,10 @@ local c = {
     white        = "#E0E0E0",
     gray         = "#7A7A7A",
     purple       = "#7289DA",
-    yellow       = "#F3D85C",
+    yellow       = "#ffd700",
     string_green = "#43B581",
     pink         = "#e07cae",
+    amber        = "#CC8A00",
     bg_dark      = "#1F2024",
     search_bg    = "#3A3B45",
     search_fg    = "#E0E0E0",
@@ -56,14 +57,14 @@ M.setup = function()
     -- ======================
     -- Syntax
     -- ======================
-    hl("Comment",    { fg = c.gray, italic = false })
+    hl("Comment",    { fg = c.amber, italic = false })
     hl("Constant",   { fg = c.white })
-    hl("Function",   { fg = c.yellow })
+    hl("Function",   { fg = c.white })
     hl("Identifier", { fg = c.white })
     hl("Operator",   { fg = c.gray })
     hl("Statement",  { fg = c.purple, bold = true })
     hl("Type",       { fg = c.yellow, bold = true })
-    hl("Keyword",    { fg = c.purple, bold = true })
+    hl("Keyword",    { fg = c.yellow, bold = true })
     hl("String",     { fg = c.string_green, italic = false })
     hl("Include",    { fg = c.yellow })
     hl("PreProc",    { fg = c.yellow })

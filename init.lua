@@ -27,19 +27,46 @@ require("ibl").setup()
 vim.opt.clipboard = "unnamedplus"
 vim.diagnostic.config({
     virtual_text = {
-        prefix = "●",
-        spacing = 2,
-        source = true,
-        wrap = true,
+        spacing = 4,
+        source = "if_many",
+        prefix = '>',
+        format = function(diagnostic)
+            local limit = 40
+            if string.len(diagnostic.message) > limit then
+                return string.sub(diagnostic.message, 1, limit) .. "..."
+            end
+            return diagnostic.message
+        end,
     },
     underline = true,
     update_in_insert = false,
     severity_sort = true,
-    signs = false;
+    signs = true;
+    float = {
+        border = 'rounded',
+        source = 'always',
+    },
 })
 
-require("faust.set")
+vim.keymap.set('n', 'K', function()
+  local winid = vim.diagnostic.open_float({ focusable = false })
+  if not winid then
+    vim.lsp.buf.hover()
+  end
+end, { desc = "Show hover or diagnostic" })
+
 vim.cmd.colorscheme("gruber_custom")
+require("faust.set")
+vim.api.nvim_set_hl(0,"Constant",   { fg =  "#ffd700" })
+vim.api.nvim_set_hl(0,"Identifier", { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0,"Operator",   { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0,"Type",       { fg = "#ffd700", bold = true })
+vim.api.nvim_set_hl(0,"Keyword",    { fg = "#ffd700",  bold = true })
+vim.api.nvim_set_hl(0,"Include",    { fg = "#00bfbb"})
+vim.api.nvim_set_hl(0,"PreProc",    { fg = "#00bfbb" })
+vim.api.nvim_set_hl(0, "@variable", { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0, "@field", { fg = "#FFFFFF" })
+vim.api.nvim_set_hl(0, "Identifier", { fg = "#FFFFFF" })
 
 -- Harpoon 
 local harpoon = require("harpoon")

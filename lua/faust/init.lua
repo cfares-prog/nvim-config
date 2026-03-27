@@ -67,13 +67,3 @@ vim.cmd([[
     endif
     ]])
 
-vim.api.nvim_set_hl(0,"Constant",   { fg =  "#ffd700" })
-vim.api.nvim_set_hl(0,"Identifier", { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0,"Operator",   { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0,"Type",       { fg = "#ffd700", bold = true })
-vim.api.nvim_set_hl(0,"Keyword",    { fg = "#ffd700",  bold = true })
-vim.api.nvim_set_hl(0,"Include",    { fg = "#00bfbb"})
-vim.api.nvim_set_hl(0,"PreProc",    { fg = "#00bfbb" })
-vim.api.nvim_set_hl(0, "@variable", { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "@field", { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "Identifier", { fg = "#FFFFFF" })
