@@ -30,6 +30,7 @@ vim.diagnostic.config({
         prefix = "●",
         spacing = 2,
         source = true,
+        wrap = true,
     },
     underline = true,
     update_in_insert = false,
@@ -38,18 +39,7 @@ vim.diagnostic.config({
 })
 
 require("faust.set")
-vim.cmd.colorscheme("gruber-darker")
-
-vim.api.nvim_set_hl(0,"Constant",   { fg =  "#00bfbb" })
-vim.api.nvim_set_hl(0,"Identifier", { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0,"Operator",   { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0,"Type",       { fg = "#ffd700", bold = true })
-vim.api.nvim_set_hl(0,"Keyword",    { fg = "#ffd700",  bold = true })
-vim.api.nvim_set_hl(0,"Include",    { fg = "#00bfbb"})
-vim.api.nvim_set_hl(0,"PreProc",    { fg = "#00bfbb" })
-vim.api.nvim_set_hl(0, "@variable", { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "@field", { fg = "#FFFFFF" })
-vim.api.nvim_set_hl(0, "Identifier", { fg = "#FFFFFF" })
+vim.cmd.colorscheme("gruber_custom")
 
 -- Harpoon 
 local harpoon = require("harpoon")
