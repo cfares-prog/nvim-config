@@ -62,14 +62,13 @@ M.setup = function()
     hl("Function",   { fg = c.white })
     hl("Identifier", { fg = c.white })
     hl("Operator",   { fg = c.gray })
-    hl("Statement",  { fg = c.purple, bold = true })
+    hl("Statement",  { fg = c.yellow, bold = true })
     hl("Type",       { fg = c.yellow, bold = true })
     hl("Keyword",    { fg = c.yellow, bold = true })
     hl("String",     { fg = c.string_green, italic = false })
-    hl("Include",    { fg = c.yellow })
+    hl("Include",    { fg = c.gray })
     hl("PreProc",    { fg = c.yellow })
     hl("Delimiter",  { fg = c.white })
-    vim.api.nvim_set_hl(0, "@keyword.return", { fg = c.purple, bold = true })
 
     -- ======================
     -- Diagnostics
