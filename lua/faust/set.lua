@@ -19,7 +19,7 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "85"
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#383a4f" })
 vim.api.nvim_set_hl(0, "Normal", { fg = "#ffffff" })
 vim.g.mapleader = " "
