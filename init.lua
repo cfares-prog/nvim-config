@@ -4,26 +4,27 @@ require("faust.lsp")
 require("faust.init")
 
 vim.opt.termguicolors = true
-require("catppuccin").setup({
-  flavour = "mocha", -- darkest
-  transparent_background = false,
-  float = {
-      transparent = true,
-      solid = false
-  },
-  show_end_buffer = false,
-  integrations = {
-    treesitter = true,
-    native_lsp = { enabled = true },
-  },
-  no_italics = true,
-  styles = {
-      conditionals = { "bold" }
-  }
-})
+--require("catppuccin").setup({
+--  flavour = "mocha", -- darkest
+--  transparent_background = false,
+--  float = {
+--      transparent = true,
+--      solid = false
+--  },
+--  show_end_buffer = false,
+--  integrations = {
+--    treesitter = true,
+--    native_lsp = { enabled = true },
+--  },
+--  no_italics = true,
+--  styles = {
+--      conditionals = { "bold" }
+--  }
+--})
 
 require("ibl").setup()
-
+require("oil").setup()
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.opt.clipboard = "unnamedplus"
 vim.diagnostic.config({
     virtual_text = {
