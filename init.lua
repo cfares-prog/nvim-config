@@ -23,31 +23,6 @@ vim.opt.termguicolors = true
 --})
 
 require("ibl").setup()
-require("oil").setup()
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.opt.clipboard = "unnamedplus"
-vim.diagnostic.config({
-    virtual_text = {
-        spacing = 4,
-        source = "if_many",
-        prefix = '>',
-        format = function(diagnostic)
-            local limit = 40
-            if string.len(diagnostic.message) > limit then
-                return string.sub(diagnostic.message, 1, limit) .. "..."
-            end
-            return diagnostic.message
-        end,
-    },
-    underline = true,
-    update_in_insert = false,
-    severity_sort = true,
-    signs = true;
-    float = {
-        border = 'rounded',
-        source = 'always',
-    },
-})
 
 vim.keymap.set('n', 'K', function()
   local winid = vim.diagnostic.open_float({ focusable = false })
@@ -61,31 +36,9 @@ require("faust.set")
 
 vim.api.nvim_set_hl(0,"Comment",{ fg = "#CC8A00", italic = false })
 vim.api.nvim_set_hl(0, "String",     { fg ="#5cdb5c" , italic = false })
---vim.api.nvim_set_hl(0,"Constant",   { fg =  "#ffd700" })
---vim.api.nvim_set_hl(0,"Identifier", { fg = "#FFFFFF" })
---vim.api.nvim_set_hl(0,"Operator",   { fg = "#FFFFFF" })
 vim.api.nvim_set_hl(0,"Type",       { fg = "#d8b65f", bold = true })
 vim.api.nvim_set_hl(0,"Keyword",    { fg = "#d8b65f",  bold = true })
---vim.api.nvim_set_hl(0,"Include",    { fg = "#00bfbb"})
---vim.api.nvim_set_hl(0,"PreProc",    { fg = "#00bfbb" })
---vim.api.nvim_set_hl(0, "@variable", { fg = "#FFFFFF" })
---vim.api.nvim_set_hl(0, "@field", { fg = "#FFFFFF" })
 
--- Harpoon 
-local harpoon = require("harpoon")
-harpoon:setup()
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<leader>f", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
--- Harpoon
-
--- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<leader>h", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<leader>l", function() harpoon:list():next() end)
 
 -- Treesitter
 require'nvim-treesitter'.install { 'rust', 'javascript', 'c', 'python', 'cpp', 'typescript'}
