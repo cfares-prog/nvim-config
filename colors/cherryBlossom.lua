@@ -10,8 +10,8 @@ local c = {
     yellow       = "#F3D85C",
     string_green = "#7fff7f",
     bg_dark      = "#181818",
-    search_bg    = "#565f72",
-    search_fg    = "#f8f8f2",
+    search_bg    = "#F3D85C",
+    search_fg    = "#2f2f2f",
 }
 
 local hl = function(group, opts)
@@ -20,7 +20,6 @@ end
 
 M.setup = function()
     vim.cmd("highlight clear")
-    vim.o.background = "dark"
     vim.g.colors_name = "cherry_blossom"
 
     -- ======================
@@ -44,7 +43,7 @@ M.setup = function()
     -- UI Elements
     -- ======================
     hl("Visual",      { fg = "black", bg = c.search_bg })
-    hl("MatchParen",  { fg = c.purple, bg = "NONE", bold = true })
+    hl("MatchParen",  { fg = c.white, bg = "NONE", bold = true })
     hl("NonText",     { fg = c.gray })
     hl("Whitespace",  { fg = c.gray, italic = false })
 
@@ -65,9 +64,9 @@ M.setup = function()
     hl("Operator",   { fg = c.gray })
     hl("Statement",  { fg = c.pastel_pink, bold = true })
     hl("Type",       { fg = c.white, bold = true })
-    hl("Keyword",    { fg = c.pastel_pink, bold = true })
+    hl("Keyword",    { fg = c.yellow, bold = true })
     hl("String",     { fg = c.string_green, italic = false })
-    hl("Include",    { fg = c.yellow })
+    hl("Include",    { fg = c.purple })
     hl("PreProc",    { fg = c.yellow })
     hl("Delimiter",  { fg = c.purple })
     vim.api.nvim_set_hl(0, "@keyword.return", { fg = c.purple, bold = true })

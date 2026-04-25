@@ -2,6 +2,7 @@
   "blink.cmp": { "branch": "main", "commit": "451168851e8e2466bc97ee3e026c3dcb9141ce07" },
   "catppuccin": { "branch": "main", "commit": "a7788416689dbefea659d9e9415c87926b0ba5d8" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
+  "godot.nvim": { "branch": "main", "commit": "35f63ace3c3a5a2cf8f36a0a0da569a14a69fab6" },
   "gruber-darker.nvim": { "branch": "main", "commit": "aba065c3a79b58cc3863d5c9db319255abd1258a" },
   "harpoon": { "branch": "harpoon2", "commit": "87b1a3506211538f460786c23f98ec63ad9af4e5" },
   "indent-blankline.nvim": { "branch": "master", "commit": "d28a3f70721c79e3c5f6693057ae929f3d9c0a03" },
