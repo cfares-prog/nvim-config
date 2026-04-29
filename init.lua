@@ -31,7 +31,7 @@ vim.keymap.set('n', 'K', function()
   end
 end, { desc = "Show hover or diagnostic" })
 
-vim.cmd.colorscheme("koda-dark")
+vim.cmd.colorscheme("cherryBlossom")
 require("faust.set")
 
 vim.api.nvim_set_hl(0,"Comment",{ fg = "#CC8A00", italic = false })

@@ -3,14 +3,13 @@
 local M = {}
 
 local c = {
-    white        = "#E0E0E0",
-    gray         = "#8C8C8C",
-    pastel_pink  = "#e07cae",
+    white        = "#c0c0c0",
+    gray         = "#8b8b8b",
     purple       = "#a17fd6",
-    yellow       = "#F3D85C",
-    string_green = "#7fff7f",
+    yellow       = "#d8b65f",
+    string_green = "#7fcf7f",
     bg_dark      = "#181818",
-    search_bg    = "#F3D85C",
+    search_bg    = "#ffffff",
     search_fg    = "#2f2f2f",
 }
 
@@ -31,7 +30,7 @@ M.setup = function()
     hl("CursorLine",   { bg = c.bg_dark })
     hl("CursorLineNr", { fg = c.purple, bold = true })
     hl("LineNr",       { fg = c.gray })
-    hl("SignColumn",   { fg = c.pastel_pink })
+    hl("SignColumn",   { fg = c.gray })
 
     -- ======================
     -- Search
@@ -62,21 +61,22 @@ M.setup = function()
     hl("Function",   { fg = c.yellow })
     hl("Identifier", { fg = c.white })
     hl("Operator",   { fg = c.gray })
-    hl("Statement",  { fg = c.pastel_pink, bold = true })
+    hl("Statement",  { fg = c.gray, bold = true })
     hl("Type",       { fg = c.white, bold = true })
     hl("Keyword",    { fg = c.yellow, bold = true })
     hl("String",     { fg = c.string_green, italic = false })
     hl("Include",    { fg = c.purple })
     hl("PreProc",    { fg = c.yellow })
     hl("Delimiter",  { fg = c.purple })
-    vim.api.nvim_set_hl(0, "@keyword.return", { fg = c.purple, bold = true })
+    hl("@punctuation.bracket", { link = "Delimiter" })
+    hl("@punctuation.delimiter", { link = "Delimiter" })
 
     -- ======================
     -- Diagnostics
     -- ======================
     hl("DiagnosticError", { fg = "#D87C7C" })
     hl("DiagnosticWarn",  { fg = c.yellow })
-    hl("DiagnosticInfo",  { fg = c.yellow })
+    hl("DiagnosticInfo",  { fg = c.gray })
     hl("DiagnosticHint",  { fg = c.gray })
 
     -- ======================
@@ -84,9 +84,9 @@ M.setup = function()
     -- ======================
     hl("ColorColumn",   { bg = "#3A3F52" })
     hl("NormalFloat",   { bg = "NONE" })
-    hl("Number",        { fg = c.pastel_pink })
-    hl("Boolean",       { fg = c.yellow })
-    hl("@variable.parameter.python", { fg = c.pastel_pink, bold = true })
+    hl("Number",        { fg = c.gray })
+    hl("Boolean",       { fg = c.gray })
+    hl("@variable.parameter.python", { fg = c.gray, bold = true })
 end
 
 M.setup()
