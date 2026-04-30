@@ -4,23 +4,23 @@ require("faust.lsp")
 require("faust.init")
 
 vim.opt.termguicolors = true
---require("catppuccin").setup({
---  flavour = "mocha", -- darkest
---  transparent_background = false,
---  float = {
---      transparent = true,
---      solid = false
---  },
---  show_end_buffer = false,
---  integrations = {
---    treesitter = true,
---    native_lsp = { enabled = true },
---  },
---  no_italics = true,
---  styles = {
---      conditionals = { "bold" }
---  }
---})
+require("catppuccin").setup({
+  flavour = "mocha",
+  transparent_background = false,
+  float = {
+      transparent = true,
+      solid = false
+  },
+  show_end_buffer = false,
+  integrations = {
+    treesitter = true,
+    native_lsp = { enabled = true },
+  },
+  no_italics = true,
+  styles = {
+      conditionals = { "bold" }
+  }
+})
 
 require("ibl").setup()
 
@@ -34,22 +34,27 @@ end, { desc = "Show hover or diagnostic" })
 vim.cmd.colorscheme("cherryBlossom")
 require("faust.set")
 
-vim.api.nvim_set_hl(0,"Comment",{ fg = "#CC8A00", italic = false })
-vim.api.nvim_set_hl(0, "String",     { fg ="#5cdb5c" , italic = false })
-vim.api.nvim_set_hl(0,"Type",       { fg = "#d8b65f", bold = true })
-vim.api.nvim_set_hl(0,"Keyword",    { fg = "#d8b65f",  bold = true })
+local accent_yellow = "#d8b65f"
+local string_green   = "#5cdb5c"
+local comment_gold   = "#CC8A00"
+local eval_gray      = "#ababab"
 
+vim.api.nvim_set_hl(0, "Comment", { fg = comment_gold, italic = false })
+vim.api.nvim_set_hl(0, "String",  { fg = string_green,  italic = false })
+vim.api.nvim_set_hl(0, "Type",    { fg = accent_yellow, bold = true })
+vim.api.nvim_set_hl(0, "Keyword", { fg = accent_yellow, bold = true })
 
--- Treesitter
+vim.api.nvim_set_hl(0, "Identifier", { fg = accent_yellow })
+vim.api.nvim_set_hl(0, "Variable",   { fg = accent_yellow })
+vim.api.nvim_set_hl(0, "Property",   { fg = accent_yellow })
+vim.api.nvim_set_hl(0, "Constant",   { fg = accent_yellow })
+
+vim.api.nvim_set_hl(0, "Function",   { fg = eval_gray })
+vim.api.nvim_set_hl(0, "Number",   { fg = eval_gray })
+vim.api.nvim_set_hl(0, "Boolean",  { fg = eval_gray })
+vim.api.nvim_set_hl(0, "Float",    { fg = eval_gray })
+
 require'nvim-treesitter'.install { 'rust', 'javascript', 'c', 'python', 'cpp', 'typescript'}
-
--- No italics
-vim.cmd([[
-  highlight Comment gui=NONE
-  highlight Keyword gui=NONE
-  highlight Function gui=NONE
-  highlight String gui=NONE
-]])
 
 -- virtual lines
 local ns = vim.api.nvim_create_namespace("eof_padding")
