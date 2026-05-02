@@ -1,50 +1,57 @@
-local gruber_colors = {
-  bg       = '#181818',
-  fg       = '#e4e4ef',
-  yellow   = '#ffdd33',
-  green    = '#73c936',
-  black    = '#282828',
-  quartz   = '#95a99f',
-  red      = '#f43841',
-  brown    = '#cc8c3c',
-}
-
 require('lualine').setup {
   options = {
-    theme = {
-      normal = {
-        a = { fg = gruber_colors.bg, bg = gruber_colors.yellow, gui = 'bold' },
-        b = { fg = gruber_colors.fg, bg = gruber_colors.black },
-        c = { fg = gruber_colors.quartz, bg = gruber_colors.bg },
-      },
-      insert = {
-        a = { fg = gruber_colors.bg, bg = gruber_colors.green, gui = 'bold' },
-      },
-      visual = {
-        a = { fg = gruber_colors.bg, bg = gruber_colors.brown, gui = 'bold' },
-      },
-      replace = {
-        a = { fg = gruber_colors.bg, bg = gruber_colors.red, gui = 'bold' },
-      },
-      inactive = {
-        a = { fg = gruber_colors.quartz, bg = gruber_colors.bg },
-        b = { fg = gruber_colors.quartz, bg = gruber_colors.bg },
-        c = { fg = gruber_colors.quartz, bg = gruber_colors.bg },
-      },
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
     },
-    component_separators = { left = ' ', right = ' ' },
-    section_separators = { left = '', right = '' },
-    globalstatus = true,
+    ignore_focus = {},
+    always_divide_middle = true,
+    always_show_tabline = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+      refresh_time = 16, -- ~60fps
+      events = {
+        'WinEnter',
+        'BufEnter',
+        'BufWritePost',
+        'SessionLoadPost',
+        'FileChangedShellPost',
+        'VimResized',
+        'Filetype',
+        'CursorMoved',
+        'CursorMovedI',
+        'ModeChanged',
+      },
+    }
   },
   sections = {
-    lualine_b = { 'branch', 'diff' },
-    lualine_c = { { 'filename', path = 1 } },
-    lualine_x = { 'diagnostics', 'encoding', 'filetype' },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' }
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
   },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
 }
-
 --require('godot').setup({
 --  executable = "godot",
 --

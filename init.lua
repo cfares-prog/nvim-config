@@ -31,20 +31,21 @@ vim.keymap.set('n', 'K', function()
   end
 end, { desc = "Show hover or diagnostic" })
 
-vim.cmd.colorscheme("cherryBlossom")
+vim.cmd.colorscheme("koda-dark")
 require("faust.set")
 
-local accent_yellow = "#d8b65f"
+local accent_yellow  = "#d8b65f"
 local string_green   = "#5cdb5c"
 local comment_gold   = "#CC8A00"
-local eval_gray      = "#ababab"
+local eval_white     = "#d8d8d8"
+local eval_gray      = "#a1a1a1"
 
 vim.api.nvim_set_hl(0, "Comment", { fg = comment_gold, italic = false })
+
 vim.api.nvim_set_hl(0, "String",  { fg = string_green,  italic = false })
 vim.api.nvim_set_hl(0, "Type",    { fg = accent_yellow, bold = true })
 vim.api.nvim_set_hl(0, "Keyword", { fg = accent_yellow, bold = true })
 
-vim.api.nvim_set_hl(0, "Identifier", { fg = accent_yellow })
 vim.api.nvim_set_hl(0, "Variable",   { fg = accent_yellow })
 vim.api.nvim_set_hl(0, "Property",   { fg = accent_yellow })
 vim.api.nvim_set_hl(0, "Constant",   { fg = accent_yellow })
@@ -53,6 +54,9 @@ vim.api.nvim_set_hl(0, "Function",   { fg = eval_gray })
 vim.api.nvim_set_hl(0, "Number",   { fg = eval_gray })
 vim.api.nvim_set_hl(0, "Boolean",  { fg = eval_gray })
 vim.api.nvim_set_hl(0, "Float",    { fg = eval_gray })
+vim.api.nvim_set_hl(0, "Identifier", { fg = eval_white })
+
+vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#151515" })
 
 require'nvim-treesitter'.install { 'rust', 'javascript', 'c', 'python', 'cpp', 'typescript'}
 
