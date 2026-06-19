@@ -52,15 +52,16 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
---require('godot').setup({
---  executable = "godot",
---
---  dap = {
---    adapter = {
---      host = "127.0.0.1",
---      port = 6006,
---    },
---  },
---
---  expose_commands = true,
---})
+
+require('telescope').setup({
+  defaults = {
+    file_ignore_patterns = {
+      "bin/",
+      "obj/",
+      "node_modules/",
+      "%.git/",
+      "target/",
+    },
+  },
+})
+

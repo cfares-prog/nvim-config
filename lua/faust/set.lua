@@ -19,11 +19,34 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "85"
+vim.opt.colorcolumn = "80"
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2e2e2e" })
 vim.api.nvim_set_hl(0, "Normal", { fg = "#ffffff" })
 vim.g.mapleader = " "
 
+local accent_yellow  = "#d8b65f"
+local string_green   = "#5cdb5c"
+local comment_gold   = "#CC8A00"
+local eval_white     = "#d8d8d8"
+local eval_gray      = "#a1a1a1"
+
+vim.api.nvim_set_hl(0, "Comment", { fg = comment_gold, italic = false })
+
+vim.api.nvim_set_hl(0, "String",  { fg = string_green,  italic = false })
+vim.api.nvim_set_hl(0, "Type",    { fg = accent_yellow, bold = true })
+vim.api.nvim_set_hl(0, "Keyword", { fg = accent_yellow, bold = true })
+
+vim.api.nvim_set_hl(0, "Variable",   { fg = accent_yellow })
+vim.api.nvim_set_hl(0, "Property",   { fg = accent_yellow })
+vim.api.nvim_set_hl(0, "Constant",   { fg = accent_yellow })
+
+vim.api.nvim_set_hl(0, "Function",   { fg = eval_gray })
+vim.api.nvim_set_hl(0, "Number",   { fg = eval_gray })
+vim.api.nvim_set_hl(0, "Boolean",  { fg = eval_gray })
+vim.api.nvim_set_hl(0, "Float",    { fg = eval_gray })
+vim.api.nvim_set_hl(0, "Identifier", { fg = eval_white })
+
+vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#151515" })
 
 require("oil").setup({
     view_options = {
