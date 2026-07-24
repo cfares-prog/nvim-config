@@ -52,16 +52,3 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
-
-require('telescope').setup({
-  defaults = {
-    file_ignore_patterns = {
-      "bin/",
-      "obj/",
-      "node_modules/",
-      "%.git/",
-      "target/",
-    },
-  },
-})
-
