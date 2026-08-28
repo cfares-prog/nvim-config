@@ -51,7 +51,13 @@ vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#151515" })
 require("oil").setup({
     view_options = {
         show_hidden = true,
-    }
+    },
+
+    columns = {
+        "permissions",
+        "size",
+        "mtime", 
+    },
 })
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
