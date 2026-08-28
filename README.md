@@ -1,6 +1,6 @@
 # nvim-config
 
-A fully customized Neovim configuration written entirely in Lua, featuring modern plugins for development with support for multiple languages including Rust, Python, TypeScript, C/C++, and C#.
+A fully customized Neovim configuration
 
 ## Table of Contents
 
@@ -20,7 +20,6 @@ A fully customized Neovim configuration written entirely in Lua, featuring moder
 
 This is a complete Neovim configuration leveraging **Lazy.nvim** for fast plugin management and loading. The configuration is organized into modular Lua components for easy maintenance and customization. It includes modern development tools, comprehensive LSP support, and a polished user interface.
 
-**Language:** Lua (100%)
 
 ## Features
 
