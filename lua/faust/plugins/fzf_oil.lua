@@ -19,20 +19,6 @@ return {
       files = {
         cmd = "find . -type f",
       },
-      winopts = {
-        split = nil, 
-        
-        width = 1.00,
-        height = 5,
-        
-        row = 0.96,
-        col = 0.00,
-        
-        border = "none",
-        preview = {
-          hidden = "hidden",
-        },
-      },
       fzf_opts = {
         ["--layout"] = "default",
       },
